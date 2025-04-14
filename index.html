@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Html Css Javascript</title>
+    </head>
+    <body id="body"></body>
+    <script>
+        document.requestStorageAccess().then(
+            () => {
+                console.log('cookie access granted');
+                document.cookie = 'username=JohnDoe; expires=Sun, 21 Apr 2024 12:00:00 UTC; path=/';
+            },
+            () => {
+                console.log('cookie access denied');
+            },
+        );
+    </script>
+</html>
