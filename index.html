@@ -6,14 +6,17 @@
     </head>
     <body id="body"></body>
     <script>
-        document.requestStorageAccess().then(
-            () => {
-                console.log('cookie access granted');
-                document.cookie = 'username=JohnDoe; expires=Sun, 21 Apr 2024 12:00:00 UTC; path=/';
-            },
-            () => {
-                console.log('cookie access denied');
-            },
-        );
+        window.addEventListener('click', () => {
+            document.requestStorageAccess().then(
+                () => {
+                    console.log('cookie access granted');
+                    document.cookie = 'username=JohnDoe; expires=Sun, 21 Apr 2024 12:00:00 UTC; path=/';
+                },
+                () => {
+                    console.log('cookie access denied');
+                },
+            );
+            console.log('im alive')
+        });
     </script>
 </html>
